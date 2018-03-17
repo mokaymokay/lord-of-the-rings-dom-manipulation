@@ -143,3 +143,16 @@ const myBuddies = document.getElementsByClassName('buddy');
   gandalf.innerHTML = 'Gandalf the White';
   gandalf.style.border = 'solid gray 3px';
 })();
+
+// #10
+// pop up an alert that the horn of gondor has been blown
+// Boromir's been killed by the Uruk-hai!
+// put a linethrough on boromir's name
+// Remove Boromir from the Fellowship
+
+(function hornOfGondor() {
+  alert("The Horn of Gondor has been blown!");
+  let boromir = document.getElementById('boromir');
+  boromir.style.textDecoration = 'line-through';
+  boromir.remove();
+})();
