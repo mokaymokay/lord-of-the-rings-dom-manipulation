@@ -56,3 +56,16 @@ const body = document.querySelector('body');
   let theShire = document.getElementsByClassName('The Shire')[0];
   theShire.appendChild(myHobbitList);
 })();
+
+// #3
+// create a div with an id of 'the-ring'
+// give the div a class of 'magic-imbued-jewelry'
+// add the ring as a child of Frodo
+
+(function keepItSecretKeepItSafe() {
+  const theRing = document.createElement('div');
+  theRing.setAttribute('id', 'the-ring');
+  theRing.setAttribute('class', 'magic-imbued-jewelry');
+  const Frodo = document.getElementsByClassName('hobbit')[0];
+  Frodo.appendChild(theRing);
+})();
