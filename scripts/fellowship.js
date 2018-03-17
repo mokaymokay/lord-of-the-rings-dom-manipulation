@@ -125,10 +125,21 @@ const myBuddies = document.getElementsByClassName('buddy');
   rivendell.appendChild(fellowship);
   for (var i = 0; i < myHobbits.length; i++) {
     fellowship.appendChild(myHobbits[0]);
-    alert(`${myHobbits[0].innerText} has joined your party.`)
+    // alert(`${myHobbits[0].innerText} has joined your party.`) // commented out temporarily
   }
   for (var i = 0; i < myBuddies.length; i++) {
     fellowship.appendChild(myBuddies[0]);
-    alert(`${myBuddies[0].innerText} has joined your party.`)
+    // alert(`${myBuddies[0].innerText} has joined your party.`) // commented out temporarily
   }
+})();
+
+// #9
+// change the 'Gandalf' textNode to 'Gandalf the White'
+// apply style to the element
+// add a gray 3px border width
+
+(function theBalrog() {
+  const gandalf = document.getElementById('gandalf the grey');
+  gandalf.innerHTML = 'Gandalf the White';
+  gandalf.style.border = 'solid gray 3px';
 })();
