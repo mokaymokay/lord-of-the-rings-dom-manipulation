@@ -1,14 +1,14 @@
 console.log("LINKED");
 
 // Dramatis Personae
-var hobbits = [
+const hobbits = [
   'Frodo Baggins',
   'Samwise \'Sam\' Gamgee',
   'Meriadoc \'Merry\' Brandybuck',
   'Peregrin \'Pippin\' Took'
 ];
 
-var buddies = [
+const buddies = [
   'Gandalf the Grey',
   'Legolas',
   'Gimli',
@@ -16,6 +16,27 @@ var buddies = [
   'Boromir'
 ];
 // Our Setting
-var lands = ['The Shire', 'Rivendell', 'Mordor'];
+const lands = ['The Shire', 'Rivendell', 'Mordor'];
 // Starter code for the body
-var body = document.querySelector('body');
+const body = document.querySelector('body');
+
+// #1
+// create a section tag with an id of middle-earth
+// add each land as an article tag (add them one by one in a loop)
+// inside each article tag include an h1 with the name of the land
+// each article should also have a class equal to its name ('The Shire' element should have a class of 'The Shire')
+// append middle-earth to your document body
+
+(function makeMiddleEarth() {
+    const middleEarth = document.createElement('section');
+    middleEarth.setAttribute('id', 'middle-earth');
+    for (let i = 0; i < lands.length; i++) {
+      let newArticle = document.createElement('article');
+      middleEarth.appendChild(newArticle);
+      let newHeading = document.createElement('h1');
+      newArticle.appendChild(newHeading);
+      newHeading.innerHTML = lands[i];
+      newArticle.className = lands[i];
+    }
+    document.body.appendChild(middleEarth);
+})();
