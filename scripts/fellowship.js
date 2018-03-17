@@ -172,3 +172,19 @@ const sam = document.getElementsByClassName('hobbit')[1];
   mountDoom.setAttribute('id', 'mount-doom');
   mordor.appendChild(mountDoom);
 })();
+
+// #12
+// Create a div with an id of 'gollum' and add it to Mordor
+// Remove the ring from Frodo and give it to Gollum
+// Move Gollum into Mount Doom
+
+const ring = document.getElementById('the-ring');
+const mountDoom = document.getElementById('mount-doom');
+
+(function weWantsIt() {
+  const gollum = document.createElement('div')
+  gollum.setAttribute('id', 'gollum');
+  mordor.appendChild(gollum);
+  gollum.appendChild(ring);
+  mountDoom.appendChild(gollum);
+})();
