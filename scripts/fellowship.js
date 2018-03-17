@@ -45,6 +45,8 @@ const body = document.querySelector('body');
 // display an unordered list of hobbits in the shire (which is the first article tag on the page)
 // give each hobbit a class of hobbit
 
+const theShire = document.getElementsByClassName('The Shire')[0];
+
 (function makeHobbits() {
   const myHobbitList = document.createElement('ul');
   for (let i = 0; i < hobbits.length; i++) {
@@ -53,7 +55,6 @@ const body = document.querySelector('body');
     myHobbits.innerHTML = hobbits[i];
     myHobbits.className = 'hobbit';
   }
-  let theShire = document.getElementsByClassName('The Shire')[0];
   theShire.appendChild(myHobbitList);
 })();
 
@@ -126,11 +127,11 @@ const myBuddies = document.getElementsByClassName('buddy');
   rivendell.appendChild(fellowship);
   for (var i = 0; i < myHobbits.length; i++) {
     fellowship.appendChild(myHobbits[0]);
-    // alert(`${myHobbits[0].innerText} has joined your party.`) // commented out temporarily
+    alert(`${myHobbits[0].innerText} has joined your party.`)
   }
   for (var i = 0; i < myBuddies.length; i++) {
     fellowship.appendChild(myBuddies[0]);
-    // alert(`${myBuddies[0].innerText} has joined your party.`) // commented out temporarily
+    alert(`${myBuddies[0].innerText} has joined your party.`)
   }
 })();
 
@@ -152,7 +153,7 @@ const myBuddies = document.getElementsByClassName('buddy');
 // Remove Boromir from the Fellowship
 
 (function hornOfGondor() {
-  // alert("The Horn of Gondor has been blown!"); // commented out temporarily
+  alert("The Horn of Gondor has been blown!");
   let boromir = document.getElementById('boromir');
   boromir.style.textDecoration = 'line-through';
   boromir.remove();
@@ -187,4 +188,17 @@ const mountDoom = document.getElementById('mount-doom');
   mordor.appendChild(gollum);
   gollum.appendChild(ring);
   mountDoom.appendChild(gollum);
+})();
+
+
+// #13
+// remove Gollum and the Ring from the document
+// Move all the hobbits back to the shire
+
+(function thereAndBackAgain() {
+  document.getElementById('gollum').remove();
+  ring.remove();
+  for (var i = 0; i < myHobbits.length; i++) {
+    theShire.appendChild(myHobbits[i]);
+  }
 })();
