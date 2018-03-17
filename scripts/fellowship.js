@@ -75,6 +75,8 @@ const body = document.querySelector('body');
 // attach an unordered list of the 'buddies' in the aside
 // insert your aside as a child element of rivendell
 
+const rivendell = document.getElementsByClassName('Rivendell')[0];
+
 (function makeBuddies() {
   const asideTag = document.createElement('aside');
   const myBuddiesList = document.createElement('ul');
@@ -83,9 +85,9 @@ const body = document.querySelector('body');
     myBuddiesList.appendChild(myBuddies);
     myBuddies.innerHTML = buddies[i];
     myBuddies.setAttribute('id', buddies[i].toLowerCase());
+    myBuddies.setAttribute('class', 'buddy');
   }
   asideTag.appendChild(myBuddiesList);
-  let rivendell = document.getElementsByClassName('Rivendell')[0];
   rivendell.appendChild(asideTag);
 })();
 
@@ -99,12 +101,34 @@ const body = document.querySelector('body');
 // #7
 // assemble the hobbits and move them to Rivendell
 
+const myHobbits = document.getElementsByClassName('hobbit');
+
 (function leaveTheShire() {
   let newHobbitLocation = document.createElement('ul');
-  let rivendell = document.getElementsByClassName('Rivendell')[0];
   rivendell.appendChild(newHobbitLocation);
-  let myHobbits = document.getElementsByClassName('hobbit');
   for (let i = 0; i < myHobbits.length; i++) {
     newHobbitLocation.appendChild(myHobbits[0]);
+  }
+})();
+
+// #8
+// create a new div with an id of 'the-fellowship'
+// add each hobbit and buddy one at a time to 'the-fellowship'
+// after each character is added make an alert that they have joined your party
+// append the fellowship div to rivendell
+
+const myBuddies = document.getElementsByClassName('buddy');
+
+(function forgeTheFellowShip() {
+  let fellowship = document.createElement('div');
+  fellowship.setAttribute('id', 'the-fellowship');
+  rivendell.appendChild(fellowship);
+  for (var i = 0; i < myHobbits.length; i++) {
+    fellowship.appendChild(myHobbits[0]);
+    alert(`${myHobbits[0].innerText} has joined your party.`)
+  }
+  for (var i = 0; i < myBuddies.length; i++) {
+    fellowship.appendChild(myBuddies[0]);
+    alert(`${myBuddies[0].innerText} has joined your party.`)
   }
 })();
