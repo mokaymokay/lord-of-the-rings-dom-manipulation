@@ -40,3 +40,19 @@ const body = document.querySelector('body');
     }
     document.body.appendChild(middleEarth);
 })();
+
+// #2
+// display an unordered list of hobbits in the shire (which is the first article tag on the page)
+// give each hobbit a class of hobbit
+
+(function makeHobbits() {
+  const myHobbitList = document.createElement('ul');
+  for(let i = 0; i < hobbits.length; i++) {
+    let myHobbits = document.createElement('li');
+    myHobbitList.appendChild(myHobbits);
+    myHobbits.innerHTML = hobbits[i];
+    myHobbits.className = 'hobbit';
+  }
+  let theShire = document.getElementsByClassName('The Shire')[0];
+  theShire.appendChild(myHobbitList);
+})();
