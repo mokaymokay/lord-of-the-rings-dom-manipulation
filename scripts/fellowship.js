@@ -47,7 +47,7 @@ const body = document.querySelector('body');
 
 (function makeHobbits() {
   const myHobbitList = document.createElement('ul');
-  for(let i = 0; i < hobbits.length; i++) {
+  for (let i = 0; i < hobbits.length; i++) {
     let myHobbits = document.createElement('li');
     myHobbitList.appendChild(myHobbits);
     myHobbits.innerHTML = hobbits[i];
@@ -68,4 +68,22 @@ const body = document.querySelector('body');
   theRing.setAttribute('class', 'magic-imbued-jewelry');
   const Frodo = document.getElementsByClassName('hobbit')[0];
   Frodo.appendChild(theRing);
+})();
+
+// #4
+// create an aside tag
+// attach an unordered list of the 'buddies' in the aside
+// insert your aside as a child element of rivendell
+
+(function makeBuddies() {
+  const asideTag = document.createElement('aside');
+  const myBuddiesList = document.createElement('ul');
+  for (var i = 0; i < buddies.length; i++) {
+    let myBuddies = document.createElement('li');
+    myBuddiesList.appendChild(myBuddies);
+    myBuddies.innerHTML = buddies[i];
+  }
+  asideTag.appendChild(myBuddiesList);
+  let rivendell = document.getElementsByClassName('Rivendell')[0];
+  rivendell.appendChild(asideTag);
 })();
