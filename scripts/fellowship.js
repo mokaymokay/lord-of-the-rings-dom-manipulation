@@ -62,12 +62,13 @@ const body = document.querySelector('body');
 // give the div a class of 'magic-imbued-jewelry'
 // add the ring as a child of Frodo
 
+const frodo = document.getElementsByClassName('hobbit')[0];
+
 (function keepItSecretKeepItSafe() {
   const theRing = document.createElement('div');
   theRing.setAttribute('id', 'the-ring');
   theRing.setAttribute('class', 'magic-imbued-jewelry');
-  const Frodo = document.getElementsByClassName('hobbit')[0];
-  Frodo.appendChild(theRing);
+  frodo.appendChild(theRing);
 })();
 
 // #4
@@ -151,8 +152,23 @@ const myBuddies = document.getElementsByClassName('buddy');
 // Remove Boromir from the Fellowship
 
 (function hornOfGondor() {
-  alert("The Horn of Gondor has been blown!");
+  // alert("The Horn of Gondor has been blown!"); // commented out temporarily
   let boromir = document.getElementById('boromir');
   boromir.style.textDecoration = 'line-through';
   boromir.remove();
+})();
+
+// #11
+// take Frodo and Sam out of the fellowship and move them to Mordor
+// add a div with an id of 'mount-doom' to Mordor
+
+const mordor = document.getElementsByClassName('Mordor')[0];
+const sam = document.getElementsByClassName('hobbit')[1];
+
+(function itsDangerousToGoAlone(){
+  mordor.appendChild(frodo);
+  mordor.appendChild(sam);
+  let mountDoom = document.createElement('div');
+  mountDoom.setAttribute('id', 'mount-doom');
+  mordor.appendChild(mountDoom);
 })();
