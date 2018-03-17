@@ -82,8 +82,16 @@ const body = document.querySelector('body');
     let myBuddies = document.createElement('li');
     myBuddiesList.appendChild(myBuddies);
     myBuddies.innerHTML = buddies[i];
+    myBuddies.setAttribute('id', buddies[i].toLowerCase());
   }
   asideTag.appendChild(myBuddiesList);
   let rivendell = document.getElementsByClassName('Rivendell')[0];
   rivendell.appendChild(asideTag);
+})();
+
+// #5
+// change the 'Strider' textnode to 'Aragorn'
+
+(function beautifulStranger() {
+  document.getElementById('strider').innerHTML = "Aragorn";
 })();
