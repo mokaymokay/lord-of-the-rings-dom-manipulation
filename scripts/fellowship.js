@@ -95,3 +95,16 @@ const body = document.querySelector('body');
 (function beautifulStranger() {
   document.getElementById('strider').innerHTML = "Aragorn";
 })();
+
+// #7
+// assemble the hobbits and move them to Rivendell
+
+(function leaveTheShire() {
+  let newHobbitLocation = document.createElement('ul');
+  let rivendell = document.getElementsByClassName('Rivendell')[0];
+  rivendell.appendChild(newHobbitLocation);
+  let myHobbits = document.getElementsByClassName('hobbit');
+  for (let i = 0; i < myHobbits.length; i++) {
+    newHobbitLocation.appendChild(myHobbits[0]);
+  }
+})();
